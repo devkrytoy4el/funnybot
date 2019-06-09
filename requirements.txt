@@ -1,6 +1,5 @@
 discord.py
 asyncio
-random
 requests
 chardet
 websockets
