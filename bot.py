@@ -47,7 +47,7 @@ async def hi(ctx):
     author = ctx.message.author
     await ctx.send('Привет ,'+ format(author.mention)+ ', ты крутой!')
     print('[?hi] - done. Induced '+ str(author))
-    await chanel.send('[?hi] - done. Induced '+ str(author))
+    await channel.send('[?hi] - done. Induced '+ str(author))
 @Bot.command()
 async def help(ctx):
     author = str(ctx.message.author)
