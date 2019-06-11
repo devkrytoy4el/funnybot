@@ -81,7 +81,7 @@ async def coin(ctx):
     author = str(ctx.message.author)
     num=random.randint(1,2)
     if (num == 1):
-       	await ctx.send("Вым выпал - `Орёл`")
+       	await ctx.send("Вам выпал - `Орёл`")
        	print("[?coin] - done. Induced "+ author)
     if(num == 2):	
        	await ctx.send("Вам выпала - `Решка`")
