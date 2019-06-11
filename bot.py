@@ -8,7 +8,6 @@ import random
 Bot = commands.Bot(command_prefix = '?')
 Bot.remove_command('help')
 token ='NTY5NDYwMDgyMTY1ODA5MTUz.XPvtxg.MTpLkeGzPunQ2NujO3W0g0ZWOAI'
-channel = Bot.get_channel(572075184606150657)
 
 @Bot.event
 async def on_ready():
@@ -20,14 +19,17 @@ async def on_ready():
 
 @Bot.command()
 async def cat (ctx):
+    сhannel = Bot.get_channel(572075184606150657)
     author = str(ctx.message.author)
     response = requests.get('https://aws.random.cat/meow')
     data = response.json()
     await ctx.send(data['file'])
     print('[?cat] - done. Induced '+ author)
     await channel.send('[?cat] - done. Induced '+ author)
+    
 @Bot.command() 
 async def dog (ctx):
+    channel = Bot.get_channel(572075184606150657)
     author = str(ctx.message.author)
     response = requests.get('https://random.dog/woof.json')
     data = response.json()
@@ -38,18 +40,23 @@ async def dog (ctx):
 @Bot.command()
 @commands.has_permissions(administrator= True)
 async def clear(ctx, amount: int):
+    channel = Bot.get_channel(572075184606150657)
     author = str(ctx.message.author)
     await ctx.channel.purge(limit=amount)
     print("[?clear] - done. Delete " + format(amount) + " message. Induced "+ author)
     await channel.send("[?clear] - done. Delete " + format(amount) + " message. Induced "+ author)
+    
 @Bot.command()
 async def hi(ctx):
+    channel = Bot.get_channel(572075184606150657)
     author = ctx.message.author
     await ctx.send('Привет ,'+ format(author.mention)+ ', ты крутой!')
     print('[?hi] - done. Induced '+ str(author))
     await channel.send('[?hi] - done. Induced '+ str(author))
+    
 @Bot.command()
 async def help(ctx):
+    channel = Bot.get_channel(572075184606150657)
     author = str(ctx.message.author)
     emb= discord.Embed(title = "Мои команды",color = 0x39d0d6 )
     emb.add_field(name="?hi", value= "Если ты еще сегодня ни с кем не здоровался,я сделаю это вместо твоих друзей.", inline=False)
@@ -64,6 +71,7 @@ async def help(ctx):
 
 @Bot.command()
 async def ava(ctx, member : discord.Member = None):
+    channel = Bot.get_channel(572075184606150657)
     author = str(ctx.message.author) 
     user = ctx.message.author if (member == None) else member
     await ctx.message.delete()
@@ -73,8 +81,10 @@ async def ava(ctx, member : discord.Member = None):
     await ctx.send(embed=embed)
     print("[?ava] - done. Induced "+ author)
     await channel.send("[?ava] - done. Induced "+ author)
+    
 @Bot.command(pass_context= True)
 async def rnum(ctx):
+    channel = Bot.get_channel(572075184606150657)
     author = str(ctx.message.author) 
     await ctx.send("**{}, Рандомное число: __{}__**".format(ctx.message.author.mention, random.randint(1, 100)))
     await asyncio.sleep(1)
@@ -84,6 +94,7 @@ async def rnum(ctx):
 
 @Bot.command()
 async def coin(ctx):
+    channel = Bot.get_channel(572075184606150657)
     author = str(ctx.message.author)
     num=random.randint(1,2)
     if (num == 1):
@@ -94,7 +105,5 @@ async def coin(ctx):
        	await ctx.send("Вам выпала - `Решка`")
        	print("[?coin] - done. Induced "+ author)
         await channel.send("[?coin] - done. Induced "+ author)
-
-
-
+        
 Bot.run(token)
