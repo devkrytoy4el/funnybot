@@ -18,7 +18,7 @@ async def on_ready():
 
 @Bot.command()
 async def cat (ctx):
-    сhannel = Bot.get_channel(572075184606150657)
+    сhannel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
     response = requests.get('https://aws.random.cat/meow')
     data = response.json()
@@ -28,7 +28,7 @@ async def cat (ctx):
     
 @Bot.command() 
 async def dog (ctx):
-    channel = Bot.get_channel(572075184606150657)
+    channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
     response = requests.get('https://random.dog/woof.json')
     data = response.json()
@@ -39,7 +39,7 @@ async def dog (ctx):
 @Bot.command()
 @commands.has_permissions(administrator= True)
 async def clear(ctx, amount: int):
-    channel = Bot.get_channel(572075184606150657)
+    channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
     await ctx.channel.purge(limit=amount)
     print("[?clear] - done. Delete " + format(amount) + " message. Induced "+ author)
@@ -47,7 +47,7 @@ async def clear(ctx, amount: int):
     
 @Bot.command()
 async def hi(ctx):
-    channel = Bot.get_channel(572075184606150657)
+    channel = Bot.get_channel(600384214822813696))
     author = ctx.message.author
     await ctx.send('Привет ,'+ format(author.mention)+ ', ты крутой!')
     print('[?hi] - done. Induced '+ str(author))
@@ -55,7 +55,7 @@ async def hi(ctx):
     
 @Bot.command()
 async def help(ctx):
-    channel = Bot.get_channel(572075184606150657)
+    channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
     emb= discord.Embed(title = "Мои команды",color = 0x39d0d6 )
     emb.add_field(name="?hi", value= "Если ты еще сегодня ни с кем не здоровался,я сделаю это вместо твоих друзей.", inline=False)
@@ -71,7 +71,7 @@ async def help(ctx):
 
 @Bot.command()
 async def ava(ctx, member : discord.Member = None):
-    channel = Bot.get_channel(572075184606150657)
+    channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author) 
     user = ctx.message.author if (member == None) else member
     await ctx.message.delete()
@@ -84,7 +84,7 @@ async def ava(ctx, member : discord.Member = None):
     
 @Bot.command(pass_context= True)
 async def rnum(ctx):
-    channel = Bot.get_channel(572075184606150657)
+    channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author) 
     await ctx.send("**{}, Рандомное число: __{}__**".format(ctx.message.author.mention, random.randint(1, 100)))
     await asyncio.sleep(1)
@@ -93,7 +93,7 @@ async def rnum(ctx):
     await channel.send("[?rnum] - done. Induced "+ author)
 @Bot.command()
 async def gnum (ctx):
-    channel = Bot.get_channel(572075184606150657)
+    channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
     rnum=random.randint(1,3)
     await ctx.send("Я загадал число от 1 до 3 ,введите ?gnum и число которое ты считается ,что я угадал. \n Пример команды:?gnum_2 ")
@@ -102,7 +102,7 @@ async def gnum (ctx):
 
 @Bot.command()
 async def gnum_1 (ctx):
-    channel = Bot.get_channel(572075184606150657)
+    channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
     rnum=random.randint(1,3)
     if (rnum == 1):
@@ -116,7 +116,7 @@ async def gnum_1 (ctx):
 
 @Bot.command()
 async def gnum_2 (ctx):
-    channel = Bot.get_channel(572075184606150657)
+    channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
     rnum=random.randint(1,3)
     if (rnum == 2):
@@ -130,7 +130,7 @@ async def gnum_2 (ctx):
 
 @Bot.command()
 async def gnum_3 (ctx):
-    channel = Bot.get_channel(572075184606150657)
+    channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
     rnum=random.randint(1,3)
     if (rnum == 3):
@@ -144,13 +144,14 @@ async def gnum_3 (ctx):
 
 @Bot.command()
 async def coin(ctx):
-    channel = Bot.get_channel(572075184606150657)
+    channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
     choices=['Орёл','Решка']
     value=random.choice(choices)
     await ctx.send("Вам выпал(-а) - " + value)
     print("[?coin] - done. Induced "+ author)
     await channel.send("[?coin] - done. Induced "+ author)
+
 token = os.environ.get('BOT_TOKEN')
 Bot.run(str(token))
 
