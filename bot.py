@@ -152,6 +152,5 @@ async def coin(ctx):
     await ctx.send('Вам выпал(-а) - ' + value)
     print("[?coin] - done. Induced "+ author)
     await channel.send("[?coin] - done. Induced "+ author)
-
-    Bot.run(token)
+Bot.run(token)
 
