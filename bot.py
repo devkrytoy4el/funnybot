@@ -152,4 +152,5 @@ async def coin(ctx):
     print("[?coin] - done. Induced "+ author)
     await channel.send("[?coin] - done. Induced "+ author)
 token = os.environ.get('BOT_TOKEN')
+Bot.run(str(token))
 
