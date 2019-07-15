@@ -47,7 +47,7 @@ async def clear(ctx, amount: int):
     
 @Bot.command()
 async def hi(ctx):
-    channel = Bot.get_channel(600384214822813696))
+    channel = Bot.get_channel(600384214822813696)
     author = ctx.message.author
     await ctx.send('Привет ,'+ format(author.mention)+ ', ты крутой!')
     print('[?hi] - done. Induced '+ str(author))
