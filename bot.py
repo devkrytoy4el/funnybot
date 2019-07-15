@@ -4,10 +4,9 @@ from discord.ext.commands import Bot
 import asyncio
 import requests
 import random
-
+import os
 Bot = commands.Bot(command_prefix = '?')
 Bot.remove_command('help')
-token ='NTY5NDYwMDgyMTY1ODA5MTUz.XPvtxg.MTpLkeGzPunQ2NujO3W0g0ZWOAI'
 
 @Bot.event
 async def on_ready():
@@ -152,5 +151,5 @@ async def coin(ctx):
     await ctx.send("Вам выпал(-а) - " + value)
     print("[?coin] - done. Induced "+ author)
     await channel.send("[?coin] - done. Induced "+ author)
-Bot.run(token)
+token = os.environ.get('BOT_TOKEN')
 
