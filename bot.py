@@ -92,21 +92,6 @@ async def rnum(ctx):
     await ctx.delete_message(ctx.message)
     print("[?rnum] - done. Induced "+ author)
     await channel.send("[?rnum] - done. Induced "+ author)
-
-@Bot.command()
-async def coin(ctx):
-    channel = Bot.get_channel(572075184606150657)
-    author = str(ctx.message.author)
-    num=random.randint(1,2)
-    if (num == 1):
-       	await ctx.send("Вам выпал - `Орёл`")
-       	print("[?coin] - done. Induced "+ author)
-        await channel.send("[?coin] - done. Induced "+ author)
-    if(num == 2):	
-       	await ctx.send("Вам выпала - `Решка`")
-       	print("[?coin] - done. Induced "+ author)
-        await channel.send("[?coin] - done. Induced "+ author)
-
 @Bot.command()
 async def gnum (ctx):
     channel = Bot.get_channel(572075184606150657)
@@ -159,9 +144,14 @@ async def gnum_3 (ctx):
         await channel.send('[?gnum_3] - done / not guess. Induced '+ author)
 
 @Bot.command()
-async def cin(ctx):
-    choices=['Heads','Tails']
+async def coin(ctx):
+    channel = Bot.get_channel(572075184606150657)
+    author = str(ctx.message.author)
+    choices=['Вам выпал - Орёл','Вам выпала - Решка']
     value=random.choice(choices)
     await ctx.send(value)
+    print("[?coin] - done. Induced "+ author)
+    await channel.send("[?coin] - done. Induced "+ author)
 
-Bot.run(token)
+    Bot.run(token)
+
