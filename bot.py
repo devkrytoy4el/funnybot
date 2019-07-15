@@ -158,6 +158,10 @@ async def gnum_3 (ctx):
         print('[?gnum_3] - done / not guess. Induced '+ author)
         await channel.send('[?gnum_3] - done / not guess. Induced '+ author)
 
-
+@Bot.command()
+async def cin(ctx):
+    choices=['Heads','Tails']
+    value=random.choice(choices)
+    await ctx.send(value)
 
 Bot.run(token)
