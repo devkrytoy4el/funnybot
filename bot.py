@@ -105,5 +105,58 @@ async def coin(ctx):
        	await ctx.send("Вам выпала - `Решка`")
        	print("[?coin] - done. Induced "+ author)
         await channel.send("[?coin] - done. Induced "+ author)
-        
+
+@Bot.command()
+async def gnum (ctx):
+    channel = Bot.get_channel(572075184606150657)
+    author = str(ctx.message.author)
+    rnum=random.randint(1,3)
+    await ctx.send("Я загадал число от 1 до 3 ,введите ?gnum и число которое ты считается ,что я угадал. \n Пример команды:?gnum_2 ")
+    print('[?cat] - done. Induced '+ author)
+    await channel.send('[?gnum] - done. Induced '+ author)
+
+@Bot.command()
+async def gnum_1 (ctx):
+    channel = Bot.get_channel(572075184606150657)
+    author = str(ctx.message.author)
+    rnum=random.randint(1,3)
+    if (rnum == 1):
+        await ctx.send("Ты угадал,я загал число - 1")
+        print('[?gnum_1] - done / guess. Induced '+ author)
+        await channel.send('[?gnum_1] - done / guess. Induced '+ author)
+    else:
+        await ctx.send("Ты не угадал,попробуй ещё.")
+        print('[?gnum_1] - done / not guess. Induced '+ author)
+        await channel.send('[?gnum_1] - done / not guess. Induced '+ author)
+
+@Bot.command()
+async def gnum_2 (ctx):
+    channel = Bot.get_channel(572075184606150657)
+    author = str(ctx.message.author)
+    rnum=random.randint(1,3)
+    if (rnum == 2):
+        await ctx.send("Ты угадал,я загал число - 2")
+        print('[?gnum_2] - done / guess. Induced '+ author)
+        await channel.send('[?gnum_2] - done / guess. Induced '+ author)
+    else:
+        await ctx.send("Ты не угадал,попробуй ещё.")
+        print('[?gnum_2] - done / not guess. Induced '+ author)
+        await channel.send('[?gnum_2] - done / not guess. Induced '+ author)
+
+@Bot.command()
+async def gnum_3 (ctx):
+    channel = Bot.get_channel(572075184606150657)
+    author = str(ctx.message.author)
+    rnum=random.randint(1,3)
+    if (rnum == 3):
+        await ctx.send("Ты угадал,я загал число - 3")
+        print('[?gnum_3] - done / guess. Induced '+ author)
+        await channel.send('[?gnum_3] - done / guess. Induced '+ author)
+    else:
+        await ctx.send("Ты не угадал,попробуй ещё.")
+        print('[?gnum_3] - done / not guess. Induced '+ author)
+        await channel.send('[?gnum_3] - done / not guess. Induced '+ author)
+
+
+
 Bot.run(token)
