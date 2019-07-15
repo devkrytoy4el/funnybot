@@ -65,6 +65,7 @@ async def help(ctx):
     emb.add_field(name="?ava", value= "Показывает аватар пользователя, если он не указан - показывает аватар автора сообщения.", inline=False)
     emb.add_field(name="?rnum",value="Получить рандомное число от 1 до 100.",inline=True)
     emb.add_field(name="?coin", value= "Бросить монетку.", inline=False)
+    emb.add_field(name="?gnum", value= "Игра в угадайку,подробности при вводе команды.", inline=False)
     await ctx.send(embed=emb)
     print("[?help] - done. Induced "+ author)
     await channel.send("[?help] - done. Induced "+ author)
