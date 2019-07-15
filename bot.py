@@ -147,9 +147,9 @@ async def gnum_3 (ctx):
 async def coin(ctx):
     channel = Bot.get_channel(572075184606150657)
     author = str(ctx.message.author)
-    choices=['Вам выпал - Орёл','Вам выпала - Решка']
+    choices=['Орёл','Решка']
     value=random.choice(choices)
-    await ctx.send(value)
+    await ctx.send('Вам выпал(-а) - ' + value)
     print("[?coin] - done. Induced "+ author)
     await channel.send("[?coin] - done. Induced "+ author)
 
