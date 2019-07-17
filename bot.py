@@ -44,6 +44,15 @@ async def clear(ctx, amount: int):
     await ctx.channel.purge(limit=amount)
     print("[?clear] - done. Delete " + format(amount) + " message. Induced "+ author)
     await channel.send("[?clear] - done. Delete " + format(amount) + " message. Induced "+ author)
+
+
+@Bot.command()
+@commands.has_permissions(administrator= True)
+async def clear(ctx, amount: int):
+    args = message.content.split(' ')[1:]
+    await message.delete()
+    await message.channel.send(' '.join(args if len(args) != 0 else '**[!] | Введите контекст сообщения!**'))    
+    
     
 @Bot.command()
 async def hi(ctx):
