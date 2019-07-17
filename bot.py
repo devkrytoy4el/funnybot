@@ -49,11 +49,14 @@ async def clear(ctx, amount: int):
 @Bot.command()
 @commands.has_permissions(administrator= True)
 async def say(ctx):
-    args = message.content.split(' ')[1:]
-    await message.delete()
-    await message.channel.send(' '.join(args if len(args) != 0 else '**[!] | Введите контекст сообщения!**'))    
-    
-    
+    channel = Bot.get_channel(600384214822813696)
+    author = str(ctx.message.author)
+    args = ctx.message.content.split(' ')[1:]
+    await ctx.message.delete()
+    await ctx.send(' '.join(args if len(args) != 0 else '**[!] | Введите контекст сообщения!**'))    
+    print("[?say] - done. Delete "+ author)
+    await channel.send("[?say] - done. "+ author)
+
 @Bot.command()
 async def hi(ctx):
     channel = Bot.get_channel(600384214822813696)
