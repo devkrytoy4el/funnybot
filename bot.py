@@ -48,7 +48,7 @@ async def clear(ctx, amount: int):
 
 @Bot.command()
 @commands.has_permissions(administrator= True)
-async def say(ctx, amount: int):
+async def say(ctx):
     args = message.content.split(' ')[1:]
     await message.delete()
     await message.channel.send(' '.join(args if len(args) != 0 else '**[!] | Введите контекст сообщения!**'))    
