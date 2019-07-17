@@ -45,17 +45,17 @@ async def clear(ctx, amount: int):
     print("[?clear] - done. Delete " + format(amount) + " message. Induced "+ author)
     await channel.send("[?clear] - done. Delete " + format(amount) + " message. Induced "+ author)
 
-
 @Bot.command()
-@commands.has_permissions(administrator= True)
-async def say(ctx):
+@commands.has_permissions(administrator = True)
+async def say(ctx, channel: discord.TextChannel, *, cnt):
     channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
-    args = ctx.message.content.split(' ')[1:]
     await ctx.message.delete()
-    await ctx.send(' '.join(args if len(args) != 0 else '**[!] | Введите контекст сообщения!**'))    
-    print("[?say] - done. Delete "+ author)
+    emb = discord.Embed(description = cnt, colour = ctx.author.colour)
+    await channel.send(embed=emb)
+     print("[?say] - done. Delete "+ author)
     await channel.send("[?say] - done. "+ author)
+    
 
 @Bot.command()
 async def hi(ctx):
