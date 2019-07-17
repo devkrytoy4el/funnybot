@@ -53,7 +53,7 @@ async def say(ctx, channel: discord.TextChannel, *, cnt):
     await ctx.message.delete()
     emb = discord.Embed(description = cnt, colour = ctx.author.colour)
     await channel.send(embed=emb)
-     print("[?say] - done. Delete "+ author)
+    print("[?say] - done. Delete "+ author)
     await channel.send("[?say] - done. "+ author)
     
 
