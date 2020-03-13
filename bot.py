@@ -114,7 +114,7 @@ async def gnum (ctx):
 @Bot.command()
 @commands.has_permissions(administrator= True)
 async def ahelp(ctx, amount: int):
-    channel = Bot.get_channel(572075184606150657)
+    channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
     emb= discord.Embed(title = "Мои команды",color = 0x39d0d6 )
     emb.add_field(name="?clear", value= "Удалить сообщения,указывать кол-во сообщений через пробел после комманды.", inline=False)
