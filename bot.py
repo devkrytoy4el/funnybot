@@ -116,7 +116,7 @@ async def gnum (ctx):
 async def ahelp(ctx):
     channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
-    emb= discord.Embed(title = "Мои команды",color = 0x39d0d6 )
+    emb= discord.Embed(title = "ADMINS COMMANDS",color = 0x39d0d6 )
     emb.add_field(name="?clear", value= "Удалить сообщения,указывать кол-во сообщений через пробел после комманды.", inline=False)
     emb.add_field(name="?say", value= "Написать что-либ от лица бота,указывать текст сообщения через пробел после комманды.", inline=False)
     await ctx.send(embed=emb)
