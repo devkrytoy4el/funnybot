@@ -23,7 +23,6 @@ async def cat (ctx):
     response = requests.get('https://aws.random.cat/meow')
     data = response.json()
     await ctx.send(data['file'])
-    print('[?cat] - done. Induced '+ author)
     await channel.send('[?cat] - done. Induced '+ author)
     
 @Bot.command() 
@@ -33,7 +32,6 @@ async def dog (ctx):
     response = requests.get('https://random.dog/woof.json')
     data = response.json()
     await ctx.send(data['url'])
-    print('[?dog] - done. Induced '+ author)
     await channel.send('[?dog] - done. Induced '+ author)
 
 @Bot.command()
@@ -42,7 +40,6 @@ async def clear(ctx, amount: int):
     channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
     await ctx.channel.purge(limit=amount)
-    print("[?clear] - done. Delete " + format(amount) + " message. Induced "+ author)
     await channel.send("[?clear] - done. Delete " + format(amount) + " message. Induced "+ author)
 
 @Bot.command()
@@ -53,7 +50,6 @@ async def say(ctx):
     args = ctx.message.content.split(' ')[1:]
     await ctx.message.delete()
     await ctx.send(' '.join(args if len(args) != 0 else '**[!] | Введите контекст сообщения!**'))    
-    print("[?say] - done. Delete "+ author)
     await channel.send("[?say] - done. "+ author)
     
 
@@ -62,7 +58,6 @@ async def hi(ctx):
     channel = Bot.get_channel(600384214822813696)
     author = ctx.message.author
     await ctx.send('Привет ,'+ format(author.mention)+ ', ты крутой!')
-    print('[?hi] - done. Induced '+ str(author))
     await channel.send('[?hi] - done. Induced '+ str(author))
     
 @Bot.command()
@@ -77,7 +72,6 @@ async def help(ctx):
     emb.add_field(name="?rnum",value="Получить рандомное число от 1 до 100.",inline=True)
     emb.add_field(name="?coin", value= "Бросить монетку.", inline=False)
     await ctx.send(embed=emb)
-    print("[?help] - done. Induced "+ author)
     await channel.send("[?help] - done. Induced "+ author)
 
 @Bot.command()
@@ -90,7 +84,6 @@ async def ava(ctx, member : discord.Member = None):
     embed.set_footer(text= f'Вызвано: {ctx.message.author}', icon_url= str(ctx.message.author.avatar_url))
     embed.set_image(url=user.avatar_url)
     await ctx.send(embed=embed)
-    print("[?ava] - done. Induced "+ author)
     await channel.send("[?ava] - done. Induced "+ author)
     
 @Bot.command(pass_context= True)
@@ -100,7 +93,6 @@ async def rnum(ctx):
     await ctx.send("**{}, Рандомное число: __{}__**".format(ctx.message.author.mention, random.randint(1, 100)))
     await asyncio.sleep(1)
     await ctx.delete_message(ctx.message)
-    print("[?rnum] - done. Induced "+ author)
     await channel.send("[?rnum] - done. Induced "+ author)
 @Bot.command()
 async def gnum (ctx):
@@ -108,7 +100,6 @@ async def gnum (ctx):
     author = str(ctx.message.author)
     rnum=random.randint(1,3)
     await ctx.send("Я загадал число от 1 до 3 ,введите ?gnum и число которое ты считается ,что я угадал. \n Пример команды:?gnum_2 ")
-    print('[?cat] - done. Induced '+ author)
     await channel.send('[?gnum] - done. Induced '+ author)
 
 @Bot.command()
@@ -120,8 +111,7 @@ async def ahelp(ctx):
     emb.add_field(name="?clear", value= "Удалить сообщения,указывать кол-во сообщений через пробел после комманды.", inline=False)
     emb.add_field(name="?say", value= "Написать что-либ от лица бота,указывать текст сообщения через пробел после комманды.", inline=False)
     await ctx.send(embed=emb)
-    print("[?ahelp - done. " +  "Induced "+ author)
-    await channel.send("[ahelp] - done. " + "Induced "+ author)
+    await channel.send("[?ahelp] - done. " + "Induced "+ author)
 
     
 @Bot.command()
@@ -131,7 +121,6 @@ async def coin(ctx):
     choices=['Орёл','Решка']
     value=random.choice(choices)
     await ctx.send("Вам выпал(-а) - " + value)
-    print("[?coin] - done. Induced "+ author)
     await channel.send("[?coin] - done. Induced "+ author)
 
 token = os.environ.get('BOT_TOKEN')
