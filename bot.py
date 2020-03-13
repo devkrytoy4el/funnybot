@@ -34,7 +34,7 @@ async def dog (ctx):
     data = response.json()
     await ctx.send(data['url'])
     print('[?dog] - done. Induced '+ author)
-    await channel.send(print('[?dog] - done. Induced '+ author))
+    await channel.send('[?dog] - done. Induced '+ author)
 
 @Bot.command()
 @commands.has_permissions(administrator= True)
