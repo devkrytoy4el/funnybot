@@ -113,7 +113,7 @@ async def gnum (ctx):
 
 @Bot.command()
 @commands.has_permissions(administrator= True)
-async def ahelp(ctx, amount: int):
+async def ahelp(ctx):
     channel = Bot.get_channel(600384214822813696)
     author = str(ctx.message.author)
     emb= discord.Embed(title = "Мои команды",color = 0x39d0d6 )
