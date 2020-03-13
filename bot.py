@@ -76,7 +76,6 @@ async def help(ctx):
     emb.add_field(name="?ava", value= "Показывает аватар пользователя, если он не указан - показывает аватар автора сообщения.", inline=False)
     emb.add_field(name="?rnum",value="Получить рандомное число от 1 до 100.",inline=True)
     emb.add_field(name="?coin", value= "Бросить монетку.", inline=False)
-    emb.add_field(name="?gnum", value= "Игра в угадайку,подробности при вводе команды.", inline=False)
     await ctx.send(embed=emb)
     print("[?help] - done. Induced "+ author)
     await channel.send("[?help] - done. Induced "+ author)
@@ -112,47 +111,7 @@ async def gnum (ctx):
     print('[?cat] - done. Induced '+ author)
     await channel.send('[?gnum] - done. Induced '+ author)
 
-@Bot.command()
-async def gnum_1 (ctx):
-    channel = Bot.get_channel(600384214822813696)
-    author = str(ctx.message.author)
-    rnum=random.randint(1,3)
-    if (rnum == 1):
-        await ctx.send("Ты угадал,я загал число - 1")
-        print('[?gnum_1] - done / guess. Induced '+ author)
-        await channel.send('[?gnum_1] - done / guess. Induced '+ author)
-    else:
-        await ctx.send("Ты не угадал,попробуй ещё.")
-        print('[?gnum_1] - done / not guess. Induced '+ author)
-        await channel.send('[?gnum_1] - done / not guess. Induced '+ author)
 
-@Bot.command()
-async def gnum_2 (ctx):
-    channel = Bot.get_channel(600384214822813696)
-    author = str(ctx.message.author)
-    rnum=random.randint(1,3)
-    if (rnum == 2):
-        await ctx.send("Ты угадал,я загал число - 2")
-        print('[?gnum_2] - done / guess. Induced '+ author)
-        await channel.send('[?gnum_2] - done / guess. Induced '+ author)
-    else:
-        await ctx.send("Ты не угадал,попробуй ещё.")
-        print('[?gnum_2] - done / not guess. Induced '+ author)
-        await channel.send('[?gnum_2] - done / not guess. Induced '+ author)
-
-@Bot.command()
-async def gnum_3 (ctx):
-    channel = Bot.get_channel(600384214822813696)
-    author = str(ctx.message.author)
-    rnum=random.randint(1,3)
-    if (rnum == 3):
-        await ctx.send("Ты угадал,я загал число - 3")
-        print('[?gnum_3] - done / guess. Induced '+ author)
-        await channel.send('[?gnum_3] - done / guess. Induced '+ author)
-    else:
-        await ctx.send("Ты не угадал,попробуй ещё.")
-        print('[?gnum_3] - done / not guess. Induced '+ author)
-        await channel.send('[?gnum_3] - done / not guess. Induced '+ author)
 
 @Bot.command()
 async def coin(ctx):
