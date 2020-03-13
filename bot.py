@@ -111,8 +111,19 @@ async def gnum (ctx):
     print('[?cat] - done. Induced '+ author)
     await channel.send('[?gnum] - done. Induced '+ author)
 
+@Bot.command()
+@commands.has_permissions(administrator= True)
+async def ahelp(ctx, amount: int):
+    channel = Bot.get_channel(572075184606150657)
+    author = str(ctx.message.author)
+    emb= discord.Embed(title = "Мои команды",color = 0x39d0d6 )
+    emb.add_field(name="?clear", value= "Удалить сообщения,указывать кол-во сообщений через пробел после комманды.", inline=False)
+    emb.add_field(name="?say", value= "Написать что-либ от лица бота,указывать текст сообщения через пробел после комманды.", inline=False)
+    await ctx.send(embed=emb)
+    print("[?ahelp - done. " +  "Induced "+ author)
+    await channel.send("[ahelp] - done. " + "Induced "+ author)
 
-
+    
 @Bot.command()
 async def coin(ctx):
     channel = Bot.get_channel(600384214822813696)
