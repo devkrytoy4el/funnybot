@@ -73,6 +73,7 @@ async def help(ctx):
     emb.add_field(name="?dog", value= "Получить рандомную фотографию(или ГИФку) собаки.", inline=True)
     emb.add_field(name="?ava", value= "Показывает аватар пользователя, если он не указан - показывает аватар автора сообщения.", inline=False)
     emb.add_field(name="?rnum",value="Получить рандомное число от 1 до 100.",inline=True)
+    emb.add_field(name="?lastpost",value="Получить последний пост в группе Fortnite.",inline=True)
     emb.add_field(name="?coin", value= "Бросить монетку.", inline=False)
     await ctx.send(embed=emb)
     await channel.send("[?help] - done. Induced "+ author)
@@ -125,7 +126,7 @@ async def lastpost(ctx):
     a=postidlist.json()
     await ctx.send(a['response']['items'][1]['text'])
     await ctx.send(a['response']['items'][1]['attachments'][0]['photo']['photo_1280'])
-    await channel.send("[?lastpost] - done. Induced "+ author)
+    await channel.send("[?lastpost] - done. Induced "+ author+ guild.name)
     
 @Bot.command()
 async def coin(ctx):
