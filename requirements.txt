@@ -5,3 +5,4 @@ chardet
 websockets
 aiohttp
 json
+Sqlite3
