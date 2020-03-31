@@ -126,7 +126,7 @@ async def lastpost(ctx):
     a=postidlist.json()
     await ctx.send(a['response']['items'][1]['text'])
     await ctx.send(a['response']['items'][1]['attachments'][0]['photo']['photo_1280'])
-    await channel.send("[?lastpost] - done. Induced "+ author+ channel.name)
+    await channel.send("[?lastpost] - done. Induced "+ author)
     
 @Bot.command()
 async def coin(ctx):
@@ -136,6 +136,8 @@ async def coin(ctx):
     value=random.choice(choices)
     await ctx.send("Вам выпал(-а) - " + value)
     await channel.send("[?coin] - done. Induced "+ author)
+    name=guild.name
+    await channel.send(name)
 
 
 tOken=os.environ.get('VK_TOKEN')
