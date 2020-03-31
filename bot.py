@@ -126,7 +126,7 @@ async def lastpost(ctx):
     a=postidlist.json()
     await ctx.send(a['response']['items'][1]['text'])
     await ctx.send(a['response']['items'][1]['attachments'][0]['photo']['photo_1280'])
-    await channel.send("[?lastpost] - done. Induced "+ author+ guild.name)
+    await channel.send("[?lastpost] - done. Induced "+ author+ channel.name)
     
 @Bot.command()
 async def coin(ctx):
