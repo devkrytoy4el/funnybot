@@ -5,6 +5,10 @@ import asyncio
 import requests
 import random
 import os
+import json
+from bs4 import BeautifulSoup as bs
+
+
 Bot = commands.Bot(command_prefix = '?')
 Bot.remove_command('help')
 
@@ -113,6 +117,16 @@ async def ahelp(ctx):
     await ctx.send(embed=emb)
     await channel.send("[?ahelp] - done. " + "Induced "+ author)
 
+
+@Bot.command()
+async def lastpost(ctx):
+    channel = Bot.get_channel(600384214822813696)
+    author = str(ctx.message.author)
+    postidlist =requests.get('https://api.vk.com/method/wall.get', params={'domain':'fortnite','count':2,'access_token':tOken,'v':5.52})#получаем нужный пост
+    a=postidlist.json()
+    await ctx.send(a['response']['items'][1]['text'])
+    await ctx.send(a['response']['items'][1]['attachments'][0]['photo']['photo_1280'])
+    await channel.send("[?lastpost] - done. Induced "+ author)
     
 @Bot.command()
 async def coin(ctx):
@@ -123,6 +137,7 @@ async def coin(ctx):
     await ctx.send("Вам выпал(-а) - " + value)
     await channel.send("[?coin] - done. Induced "+ author)
 
+
+tOken=os.environ.get('VK_TOKEN')
 token = os.environ.get('BOT_TOKEN')
 Bot.run(str(token))
-
