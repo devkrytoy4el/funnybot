@@ -5,3 +5,4 @@ chardet
 websockets
 aiohttp
 beautifulsoup4
+time
