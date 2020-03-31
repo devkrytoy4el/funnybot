@@ -139,8 +139,7 @@ async def coin(ctx):
     value=random.choice(choices)
     await ctx.send("Вам выпал(-а) - " + value)
     await channel.send("[?coin] - done. Induced "+ author)
-    name=guild.name
-    await channel.send(name)
+  
 
 
 tOken=os.environ.get('VK_TOKEN')
