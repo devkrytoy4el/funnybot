@@ -4,5 +4,5 @@ requests
 chardet
 websockets
 aiohttp
-BeautifulSoup
+bs4
 json
