@@ -126,8 +126,7 @@ async def lastpost(ctx):
         author = str(ctx.message.author)
         postidlist =requests.get('https://api.vk.com/method/wall.get', params={'domain':'fortnite','count':2,'access_token':tOken,'v':5.52})#получаем нужный пост
         a=postidlist.json()
-        await ctx.send(a['response']['items'][1]['text'])
-        await ctx.send(a['response']['items'][1]['attachments'][0]['photo']['photo_1280'])
+        await ctx.send(a['response']['items'][1]['text']+'\n'+a['response']['items'][1]['attachments'][0]['photo']['photo_1280'])
         await channel.send("[?lastpost] - done. Induced "+ author)
         time.sleep(60)
     
