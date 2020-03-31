@@ -6,7 +6,6 @@ import requests
 import random
 import os
 import json
-from bs4 import BeautifulSoup as bs
 
 
 Bot = commands.Bot(command_prefix = '?')
